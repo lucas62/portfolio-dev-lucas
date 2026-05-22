@@ -31,14 +31,37 @@ O output vai pra `dist/` — pode subir direto em Vercel, Netlify, Cloudflare Pa
 
 ```
 nexus-electric/
-├── index.html              # entry, fontes, favicon SVG inline, theme-color
-├── tailwind.config.js      # tokens Nexus Electric (cores, tipografia, animações)
+├── index.html                        # entry, fontes, favicon SVG inline, theme-color
+├── tailwind.config.js                # tokens Nexus Electric (cores, tipografia, animações)
 ├── vite.config.js
 ├── postcss.config.js
 └── src/
-    ├── main.jsx            # bootstrap React
-    ├── index.css           # @tailwind + utilities nx-* + keyframes
-    └── App.jsx             # landing page completa (single-file)
+    ├── main.jsx                      # bootstrap React
+    ├── index.css                     # @tailwind + utilities nx-* + keyframes
+    ├── App.jsx                       # composição das seções e estado global
+    ├── data/
+    │   ├── navigation.js             # navItems
+    │   ├── features.js               # features[]
+    │   ├── companies.js              # TRUSTED_COMPANIES[]
+    │   ├── stats.js                  # STATS[]
+    │   └── footer.js                 # FOOTER_COLUMNS, INSTALL_COMMAND, VERSION
+    ├── hooks/
+    │   └── useCopyInstall.js         # estado e lógica do botão copy
+    └── components/
+        ├── Sidebar.jsx               # nav lateral desktop
+        ├── MobileHeader.jsx          # header sticky mobile
+        ├── MobileMenu.jsx            # overlay de menu mobile
+        ├── Footer.jsx                # rodapé completo
+        ├── TerminalMockup.jsx        # mockup do terminal na hero
+        ├── FeatureCard.jsx           # card de feature
+        ├── CodeBlock.jsx             # bloco de código TOML
+        └── sections/
+            ├── Hero.jsx              # #product
+            ├── TrustedBy.jsx         # logos strip
+            ├── Features.jsx          # #features
+            ├── CodeShowcase.jsx      # "Your config, as code"
+            ├── Stats.jsx             # 4 stat cards
+            └── CTA.jsx               # #pricing + install command
 ```
 
 ## Decisões de design respeitando o spec

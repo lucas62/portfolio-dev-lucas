@@ -1,6 +1,15 @@
-import { Check } from 'lucide-react';
+import { type LucideIcon } from 'lucide-react';
 
-export default function FeatureCard({ icon: Icon, title, desc, code, num, total }) {
+interface FeatureCardProps {
+  icon: LucideIcon;
+  title: string;
+  desc: string;
+  code: string;
+  num: number;
+  total: number;
+}
+
+export default function FeatureCard({ icon: Icon, title, desc, code, num, total }: FeatureCardProps) {
   return (
     <div className="bg-[#131314] p-7 md:p-9 group relative hover:bg-[#1c1b1c] transition-colors flex flex-col">
       <div className="flex items-start justify-between mb-6">

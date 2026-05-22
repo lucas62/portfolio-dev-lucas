@@ -1,7 +1,12 @@
 import { ArrowRight, Github } from 'lucide-react';
 import { INSTALL_COMMAND } from '../../data/footer';
 
-export default function CTA({ copied, copyInstall }) {
+interface CTAProps {
+  copied: boolean;
+  copyInstall: () => void;
+}
+
+export default function CTA({ copied, copyInstall }: CTAProps) {
   return (
     <section id="pricing" className="px-5 md:px-10 lg:px-16 py-20 md:py-32 relative overflow-hidden">
       <div className="absolute inset-0 nx-grid opacity-60 nx-mask-radial pointer-events-none" />

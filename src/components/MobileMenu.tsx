@@ -1,4 +1,12 @@
-export default function MobileMenu({ navItems, menuOpen, onClose }) {
+import { type NavItem } from '../data/navigation';
+
+interface MobileMenuProps {
+  navItems: NavItem[];
+  menuOpen: boolean;
+  onClose: () => void;
+}
+
+export default function MobileMenu({ navItems, menuOpen, onClose }: MobileMenuProps) {
   if (!menuOpen) return null;
 
   return (

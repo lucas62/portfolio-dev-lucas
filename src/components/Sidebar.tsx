@@ -1,7 +1,14 @@
 import { Github, Twitter } from 'lucide-react';
 import { VERSION, BUILD } from '../data/footer';
+import { type NavItem } from '../data/navigation';
 
-export default function Sidebar({ navItems, activeSection, onSectionChange }) {
+interface SidebarProps {
+  navItems: NavItem[];
+  activeSection: string;
+  onSectionChange: (id: string) => void;
+}
+
+export default function Sidebar({ navItems, activeSection, onSectionChange }: SidebarProps) {
   return (
     <aside className="hidden md:flex fixed left-0 top-0 h-screen w-[260px] flex-col bg-[#0e0e0f] border-r border-[#3b494c]/30 z-40">
       <div className="px-8 pt-9 pb-12">

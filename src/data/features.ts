@@ -1,6 +1,13 @@
-import { Zap, Sparkles, Cloud, Lock, Cpu, Terminal as TerminalIcon } from 'lucide-react';
+import { type LucideIcon, Zap, Sparkles, Cloud, Lock, Cpu, Terminal as TerminalIcon } from 'lucide-react';
 
-export const features = [
+export interface Feature {
+  icon: LucideIcon;
+  title: string;
+  desc: string;
+  code: string;
+}
+
+export const features: Feature[] = [
   {
     icon: Zap,
     title: 'Native Rust Performance',

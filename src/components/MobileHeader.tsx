@@ -1,6 +1,11 @@
 import { Menu, X } from 'lucide-react';
 
-export default function MobileHeader({ menuOpen, onToggle }) {
+interface MobileHeaderProps {
+  menuOpen: boolean;
+  onToggle: () => void;
+}
+
+export default function MobileHeader({ menuOpen, onToggle }: MobileHeaderProps) {
   return (
     <header className="md:hidden flex items-center justify-between px-4 py-3.5 border-b border-[#3b494c]/30 bg-[#0e0e0f] sticky top-0 z-50">
       <a href="#" className="flex items-center gap-2">

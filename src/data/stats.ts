@@ -1,4 +1,10 @@
-export const STATS = [
+export interface Stat {
+  num: string;
+  label: string;
+  sub: string;
+}
+
+export const STATS: Stat[] = [
   { num: '8ms', label: 'KEYSTROKE LATENCY', sub: 'p99 measured' },
   { num: '120K+', label: 'ACTIVE DEVELOPERS', sub: 'and counting' },
   { num: '247', label: 'BUILT-IN COMMANDS', sub: 'extensible API' },
